@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <Parse/Parse.h>
+
 
 @interface AppDelegate ()
 
@@ -25,6 +27,19 @@
 
      [[FBSDKApplicationDelegate sharedInstance] application:application
                                     didFinishLaunchingWithOptions:launchOptions];
+    
+    //Adding Parse
+    [Parse enableLocalDatastore];
+    // Initialize Parse.
+    [Parse setApplicationId:@"xjTJa6b3qDBd0EF669KL54MBJZ6S4tTXKPOFhdZ2"
+                  clientKey:@"SKNC5CtmQoxVBDEJY8Ne9p0sEicKKiFR31aJOevs"];
+    
+    // [Optional] Track statistics around application opens.
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+    testObject[@"foo"] = @"bar";
+    [testObject saveInBackground];
 
     return YES;
 }
