@@ -33,6 +33,7 @@
 		C54780BB1B0885F10006FE37 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C54780BA1B0885F10006FE37 /* Accounts.framework */; };
 		C54780BD1B0885F80006FE37 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C54780BC1B0885F80006FE37 /* Social.framework */; };
 		C54780BF1B0888030006FE37 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C54780BE1B0888030006FE37 /* Bolts.framework */; };
+		C54780C61B0E11570006FE37 /* HireACook.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C54780C51B0E11570006FE37 /* HireACook.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		C54780BA1B0885F10006FE37 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		C54780BC1B0885F80006FE37 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		C54780BE1B0888030006FE37 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		C54780C51B0E11570006FE37 /* HireACook.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = HireACook.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 		C51846D81B0605BB00A36801 = {
 			isa = PBXGroup;
 			children = (
+				C54780C51B0E11570006FE37 /* HireACook.xcassets */,
 				C51846E31B0605BB00A36801 /* HireACook */,
 				C51847001B0605BB00A36801 /* HireACookTests */,
 				C51846E21B0605BB00A36801 /* Products */,
@@ -267,6 +270,7 @@
 				TargetAttributes = {
 					C51846E01B0605BB00A36801 = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = 8VT29F6R7U;
 					};
 					C51846FC1B0605BB00A36801 = {
 						CreatedOnToolsVersion = 6.3;
@@ -301,6 +305,7 @@
 				C51846F31B0605BB00A36801 /* Main.storyboard in Resources */,
 				C51846F81B0605BB00A36801 /* LaunchScreen.xib in Resources */,
 				C51846F51B0605BB00A36801 /* Images.xcassets in Resources */,
+				C54780C61B0E11570006FE37 /* HireACook.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,6 +488,8 @@
 			baseConfigurationReference = 781880C1AB7B387FB986835A /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Suman Chatterjee (8VT29F6R7U)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Suman Chatterjee (8VT29F6R7U)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -490,6 +497,8 @@
 				INFOPLIST_FILE = HireACook/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "eebde462-b9b2-4181-8eb4-5a8ef6225d16";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -498,6 +507,8 @@
 			baseConfigurationReference = 22B15C0A2018B0AF5E50844D /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Suman Chatterjee (8VT29F6R7U)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Suman Chatterjee (8VT29F6R7U)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -505,6 +516,8 @@
 				INFOPLIST_FILE = HireACook/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "eebde462-b9b2-4181-8eb4-5a8ef6225d16";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
