@@ -9,7 +9,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HireACook/FirstViewController.m"
+            filePath = "HireACook/HomeViewController.m"
             timestampString = "453399378.514261"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"

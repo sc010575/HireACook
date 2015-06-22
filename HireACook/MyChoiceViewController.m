@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 Suman Chatterjee. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "MyChoiceViewController.h"
 
-@interface SecondViewController ()
+@interface MyChoiceViewController ()
 
 @end
 
-@implementation SecondViewController
+@implementation MyChoiceViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

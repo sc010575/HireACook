@@ -6,18 +6,18 @@
 //  Copyright (c) 2015 Suman Chatterjee. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "HomeViewController.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 
-@interface FirstViewController ()< FBSDKLoginButtonDelegate>
+@interface HomeViewController ()< FBSDKLoginButtonDelegate>
 
 @property (weak, nonatomic) IBOutlet FBSDKLoginButton *loginButton;
 @property (weak, nonatomic) IBOutlet UIImageView *activUser;
 
 @end
 
-@implementation FirstViewController
+@implementation HomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

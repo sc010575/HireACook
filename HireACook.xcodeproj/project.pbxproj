@@ -8,10 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		219EFA1CD6375382F983CD0E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 010CEBEAE3A45422C98259D0 /* libPods.a */; };
+		C50E5C821B32DC7900C18E1F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50E5C811B32DC7900C18E1F /* MapViewController.swift */; };
+		C50E5C841B32DE4E00C18E1F /* FavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50E5C831B32DE4E00C18E1F /* FavViewController.swift */; };
+		C50E5C861B32DE6400C18E1F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50E5C851B32DE6400C18E1F /* SettingsViewController.swift */; };
+		C50E5C881B32E26500C18E1F /* PostAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50E5C871B32E26500C18E1F /* PostAddViewController.swift */; };
+		C50E5C8D1B381BCB00C18E1F /* ParseServiceLocator.m in Sources */ = {isa = PBXBuildFile; fileRef = C50E5C8C1B381BCB00C18E1F /* ParseServiceLocator.m */; };
+		C50E5C901B3820C600C18E1F /* GeoCoderService.m in Sources */ = {isa = PBXBuildFile; fileRef = C50E5C8F1B3820C600C18E1F /* GeoCoderService.m */; };
+		C50E5C921B38284A00C18E1F /* LaunchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50E5C911B38284A00C18E1F /* LaunchingViewController.swift */; };
+		C50E5C951B38421800C18E1F /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50E5C941B38421800C18E1F /* ProgressHUD.swift */; };
 		C51846E71B0605BB00A36801 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C51846E61B0605BB00A36801 /* main.m */; };
 		C51846EA1B0605BB00A36801 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C51846E91B0605BB00A36801 /* AppDelegate.m */; };
-		C51846ED1B0605BB00A36801 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C51846EC1B0605BB00A36801 /* FirstViewController.m */; };
-		C51846F01B0605BB00A36801 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C51846EF1B0605BB00A36801 /* SecondViewController.m */; };
+		C51846ED1B0605BB00A36801 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C51846EC1B0605BB00A36801 /* HomeViewController.m */; };
+		C51846F01B0605BB00A36801 /* MyChoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C51846EF1B0605BB00A36801 /* MyChoiceViewController.m */; };
 		C51846F31B0605BB00A36801 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C51846F11B0605BB00A36801 /* Main.storyboard */; };
 		C51846F51B0605BB00A36801 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C51846F41B0605BB00A36801 /* Images.xcassets */; };
 		C51846F81B0605BB00A36801 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C51846F61B0605BB00A36801 /* LaunchScreen.xib */; };
@@ -50,15 +58,26 @@
 		010CEBEAE3A45422C98259D0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		22B15C0A2018B0AF5E50844D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		781880C1AB7B387FB986835A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		C50E5C801B32DC7800C18E1F /* HireACook-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HireACook-Bridging-Header.h"; sourceTree = "<group>"; };
+		C50E5C811B32DC7900C18E1F /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		C50E5C831B32DE4E00C18E1F /* FavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavViewController.swift; sourceTree = "<group>"; };
+		C50E5C851B32DE6400C18E1F /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		C50E5C871B32E26500C18E1F /* PostAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostAddViewController.swift; sourceTree = "<group>"; };
+		C50E5C8B1B381BCB00C18E1F /* ParseServiceLocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParseServiceLocator.h; path = ParseServices/ParseServiceLocator.h; sourceTree = "<group>"; };
+		C50E5C8C1B381BCB00C18E1F /* ParseServiceLocator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ParseServiceLocator.m; path = ParseServices/ParseServiceLocator.m; sourceTree = "<group>"; };
+		C50E5C8E1B3820C600C18E1F /* GeoCoderService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoCoderService.h; sourceTree = "<group>"; };
+		C50E5C8F1B3820C600C18E1F /* GeoCoderService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoCoderService.m; sourceTree = "<group>"; };
+		C50E5C911B38284A00C18E1F /* LaunchingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchingViewController.swift; sourceTree = "<group>"; };
+		C50E5C941B38421800C18E1F /* ProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		C51846E11B0605BB00A36801 /* HireACook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HireACook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C51846E51B0605BB00A36801 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C51846E61B0605BB00A36801 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C51846E81B0605BB00A36801 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C51846E91B0605BB00A36801 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C51846EB1B0605BB00A36801 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		C51846EC1B0605BB00A36801 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		C51846EE1B0605BB00A36801 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		C51846EF1B0605BB00A36801 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		C51846EB1B0605BB00A36801 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		C51846EC1B0605BB00A36801 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		C51846EE1B0605BB00A36801 /* MyChoiceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyChoiceViewController.h; sourceTree = "<group>"; };
+		C51846EF1B0605BB00A36801 /* MyChoiceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyChoiceViewController.m; sourceTree = "<group>"; };
 		C51846F21B0605BB00A36801 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C51846F41B0605BB00A36801 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C51846F71B0605BB00A36801 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -90,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C54780A51B0883CD0006FE37 /* CoreLocation.framework in Frameworks */,
 				C54780BD1B0885F80006FE37 /* Social.framework in Frameworks */,
 				C54780BB1B0885F10006FE37 /* Accounts.framework in Frameworks */,
 				C54780B91B0884AD0006FE37 /* Parse.framework in Frameworks */,
@@ -102,7 +122,6 @@
 				C54780AB1B08840E0006FE37 /* CoreGraphics.framework in Frameworks */,
 				C54780A91B0884000006FE37 /* CFNetwork.framework in Frameworks */,
 				C54780A71B0883F70006FE37 /* AudioToolbox.framework in Frameworks */,
-				C54780A51B0883CD0006FE37 /* CoreLocation.framework in Frameworks */,
 				C51847101B062A3700A36801 /* FBSDKLoginKit.framework in Frameworks */,
 				C518470F1B062A3600A36801 /* FBSDKCoreKit.framework in Frameworks */,
 				C54780BF1B0888030006FE37 /* Bolts.framework in Frameworks */,
@@ -146,6 +165,39 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C50E5C891B32E28A00C18E1F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C51846EB1B0605BB00A36801 /* HomeViewController.h */,
+				C51846EC1B0605BB00A36801 /* HomeViewController.m */,
+				C51846EE1B0605BB00A36801 /* MyChoiceViewController.h */,
+				C51846EF1B0605BB00A36801 /* MyChoiceViewController.m */,
+				C50E5C811B32DC7900C18E1F /* MapViewController.swift */,
+				C50E5C831B32DE4E00C18E1F /* FavViewController.swift */,
+				C50E5C851B32DE6400C18E1F /* SettingsViewController.swift */,
+				C50E5C871B32E26500C18E1F /* PostAddViewController.swift */,
+				C50E5C911B38284A00C18E1F /* LaunchingViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C50E5C8A1B381B3E00C18E1F /* ParseServices */ = {
+			isa = PBXGroup;
+			children = (
+				C50E5C8B1B381BCB00C18E1F /* ParseServiceLocator.h */,
+				C50E5C8C1B381BCB00C18E1F /* ParseServiceLocator.m */,
+			);
+			name = ParseServices;
+			sourceTree = "<group>";
+		};
+		C50E5C931B3841EF00C18E1F /* ProgressHud */ = {
+			isa = PBXGroup;
+			children = (
+				C50E5C941B38421800C18E1F /* ProgressHUD.swift */,
+			);
+			name = ProgressHud;
+			sourceTree = "<group>";
+		};
 		C51846D81B0605BB00A36801 = {
 			isa = PBXGroup;
 			children = (
@@ -170,16 +222,18 @@
 		C51846E31B0605BB00A36801 /* HireACook */ = {
 			isa = PBXGroup;
 			children = (
+				C50E5C931B3841EF00C18E1F /* ProgressHud */,
+				C50E5C8A1B381B3E00C18E1F /* ParseServices */,
+				C50E5C891B32E28A00C18E1F /* ViewControllers */,
 				C51846E81B0605BB00A36801 /* AppDelegate.h */,
 				C51846E91B0605BB00A36801 /* AppDelegate.m */,
-				C51846EB1B0605BB00A36801 /* FirstViewController.h */,
-				C51846EC1B0605BB00A36801 /* FirstViewController.m */,
-				C51846EE1B0605BB00A36801 /* SecondViewController.h */,
-				C51846EF1B0605BB00A36801 /* SecondViewController.m */,
+				C50E5C801B32DC7800C18E1F /* HireACook-Bridging-Header.h */,
 				C51846F11B0605BB00A36801 /* Main.storyboard */,
 				C51846F41B0605BB00A36801 /* Images.xcassets */,
 				C51846F61B0605BB00A36801 /* LaunchScreen.xib */,
 				C51846E41B0605BB00A36801 /* Supporting Files */,
+				C50E5C8E1B3820C600C18E1F /* GeoCoderService.h */,
+				C50E5C8F1B3820C600C18E1F /* GeoCoderService.m */,
 			);
 			path = HireACook;
 			sourceTree = "<group>";
@@ -356,9 +410,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C51846F01B0605BB00A36801 /* SecondViewController.m in Sources */,
+				C50E5C841B32DE4E00C18E1F /* FavViewController.swift in Sources */,
+				C51846F01B0605BB00A36801 /* MyChoiceViewController.m in Sources */,
+				C50E5C951B38421800C18E1F /* ProgressHUD.swift in Sources */,
+				C50E5C861B32DE6400C18E1F /* SettingsViewController.swift in Sources */,
+				C50E5C921B38284A00C18E1F /* LaunchingViewController.swift in Sources */,
 				C51846EA1B0605BB00A36801 /* AppDelegate.m in Sources */,
-				C51846ED1B0605BB00A36801 /* FirstViewController.m in Sources */,
+				C50E5C881B32E26500C18E1F /* PostAddViewController.swift in Sources */,
+				C50E5C901B3820C600C18E1F /* GeoCoderService.m in Sources */,
+				C51846ED1B0605BB00A36801 /* HomeViewController.m in Sources */,
+				C50E5C821B32DC7900C18E1F /* MapViewController.swift in Sources */,
+				C50E5C8D1B381BCB00C18E1F /* ParseServiceLocator.m in Sources */,
 				C51846E71B0605BB00A36801 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,6 +550,7 @@
 			baseConfigurationReference = 781880C1AB7B387FB986835A /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Suman Chatterjee (8VT29F6R7U)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Suman Chatterjee (8VT29F6R7U)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -498,6 +561,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "eebde462-b9b2-4181-8eb4-5a8ef6225d16";
+				SWIFT_OBJC_BRIDGING_HEADER = "HireACook/HireACook-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -507,6 +572,7 @@
 			baseConfigurationReference = 22B15C0A2018B0AF5E50844D /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Suman Chatterjee (8VT29F6R7U)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Suman Chatterjee (8VT29F6R7U)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -517,6 +583,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "eebde462-b9b2-4181-8eb4-5a8ef6225d16";
+				SWIFT_OBJC_BRIDGING_HEADER = "HireACook/HireACook-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
