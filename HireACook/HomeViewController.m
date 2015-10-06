@@ -7,96 +7,134 @@
 //
 
 #import "HomeViewController.h"
-#import <FBSDKCoreKit/FBSDKCoreKit.h>
-#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "SACollectionViewVerticalScalingCell.h"
+#import "SACollectionViewVerticalScalingFlowLayout.h"
+#import "ProviderData.h"
+#import "AppDelegate.h"
+#import "NSManagedObjectContext+Helper.h"
 
-@interface HomeViewController ()< FBSDKLoginButtonDelegate>
+static void *ProgressContext = &ProgressContext;
 
-@property (weak, nonatomic) IBOutlet FBSDKLoginButton *loginButton;
-@property (weak, nonatomic) IBOutlet UIImageView *activUser;
+@interface HomeViewController ()
+
+@property (strong, nonatomic) NSArray *items;
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property(strong, nonatomic)  NSNumber *numberOfRecordToShow;
 
 @end
 
 @implementation HomeViewController
 
+static NSString *const kCellIdentifier = @"Cell";
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-   self.loginButton.readPermissions = @[@"public_profile", @"email", @"user_friends"];
-    self.loginButton.delegate = self;
     
-    if ([FBSDKAccessToken currentAccessToken]) {
-        // User is logged in, do work such as go to next view controller.
-        [self returnUserData];
-    }
+    //Use the main persistentStoreCoordinator
+    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    self.managedObjectContext = [NSManagedObjectContext managedObjectContextWithStoreCoordinator:appDelegate.persistentStoreCoordinator];
+    [self performAsyncFetch];
+    
+}
+
+- (void)performAsyncFetch
+{
+    __weak HomeViewController *weakSelf = self;
+    
+    // Initialize Fetch Request
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"ProviderData"];
+    
+    // Add Sort Descriptors
+    [fetchRequest setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"rate" ascending:YES]]];
+    
+    // Initialize Asynchronous Fetch Request
+    NSAsynchronousFetchRequest *asynchronousFetchRequest = [[NSAsynchronousFetchRequest alloc] initWithFetchRequest:fetchRequest completionBlock:^(NSAsynchronousFetchResult *result) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            // Dismiss Progress HUD
+            
+            // Process Asynchronous Fetch Result
+            [weakSelf processAsynchronousFetchResult:result];
+            
+            // Remove Observer
+            [result.progress removeObserver:weakSelf forKeyPath:@"completedUnitCount" context:ProgressContext];
+        });
+    }];
+    
+    
+    // Execute Asynchronous Fetch Request
+    [self.managedObjectContext performBlock:^{
+        // Create Progress
+        //  NSProgress *progress = [NSProgress progressWithTotalUnitCount:1];
+        // Become Current
+        //  [progress becomeCurrentWithPendingUnitCount:1];
+        
+        // Execute Asynchronous Fetch Request
+        NSError *asynchronousFetchRequestError = nil;
+        NSAsynchronousFetchResult *asynchronousFetchResult = (NSAsynchronousFetchResult *)[weakSelf.managedObjectContext executeRequest:asynchronousFetchRequest error:&asynchronousFetchRequestError];
+        
+        if (asynchronousFetchRequestError) {
+            NSLog(@"Unable to execute asynchronous fetch result.");
+            NSLog(@"%@, %@", asynchronousFetchRequestError, asynchronousFetchRequestError.localizedDescription);
+        }
+        
+        // Add Observer
+        [asynchronousFetchResult.progress addObserver:self forKeyPath:@"completedUnitCount" options:NSKeyValueObservingOptionNew context:ProgressContext];
+        
+        // Resign Current
+        //  [progress resignCurrent];
+    }];
 
 }
 
+- (void)processAsynchronousFetchResult:(NSAsynchronousFetchResult *)asynchronousFetchResult {
+    if (asynchronousFetchResult.finalResult) {
+        // Update Items
+        [self setItems:asynchronousFetchResult.finalResult];
+        
+        // Reload Table View
+        //[self.tableView reloadData];
+    }
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.hidden  = NO;
+    [self.collectionView registerClass:[SACollectionViewVerticalScalingCell class] forCellWithReuseIdentifier:kCellIdentifier];
+    self.collectionView.dataSource = self;
+    SACollectionViewVerticalScalingFlowLayout *layout = [[SACollectionViewVerticalScalingFlowLayout alloc] init];
+    layout.scaleMode = SACollectionViewVerticalScalingFlowLayoutScaleModeHard;
+    layout.alphaMode = SACollectionViewVerticalScalingFlowLayoutScaleModeEasy;
+    self.collectionView.collectionViewLayout = layout;
+    self.numberOfRecordToShow = @([[NSUserDefaults standardUserDefaults] integerForKey:@"NumberOfRecords"]);
+
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - FB Login delegate 
 
-- (void) loginButton:(FBSDKLoginButton *)loginButton didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result error:(NSError *)error
-{
-    //Login result
-    if(error != nil)
-    {
-        //Error
-        NSLog(@"Login error");
-    }
-    else if(result.isCancelled ){
-        //Handle Cancellation
-    }
-    else
-    {
-       // (result.grantedPermissions.co)
-        [self returnUserData];
-    }
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+   // return 30;
+    
+    return [self.numberOfRecordToShow integerValue];
 }
 
-- (void)loginButtonDidLogOut:(FBSDKLoginButton *)loginButton
-{
-    //User loged out
-    NSLog(@"User Log OUT");
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    SACollectionViewVerticalScalingCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCellIdentifier forIndexPath:indexPath];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:cell.bounds];
+    NSInteger number = indexPath.row % 7 + 1;
+    imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"0%@", @(number)]];
+    UILabel *mylabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 10, 200, 30)];
+    mylabel.text = @"Suman's image";
+    mylabel.textColor = [UIColor whiteColor];
+    [cell.containerView addSubview:mylabel ];
+    [cell.containerView addSubview:imageView];
+    [cell.containerView bringSubviewToFront:mylabel];
+    return cell;
 }
 
-- (void)returnUserData
-{
-    FBSDKGraphRequest * graphRequest = [[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil];
-    [graphRequest startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
-        // handle response
-        if (!error) {
-            // result is a dictionary with the user's Facebook data
-            NSDictionary *userData = (NSDictionary *)result;
-            
-            NSString *facebookID = userData[@"id"];
-            NSString *name = userData[@"name"];
-            NSString *location = userData[@"location"][@"name"];
-            NSString *gender = userData[@"gender"];
-            NSString *birthday = userData[@"birthday"];
-            NSString *relationship = userData[@"relationship_status"];
-            
-            NSURL *pictureURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large&return_ssl_resources=1", facebookID]];
-            
-            NSURLRequest *urlRequest = [NSURLRequest requestWithURL:pictureURL];
-            
-            // Run network request asynchronously
-            [NSURLConnection sendAsynchronousRequest:urlRequest
-                                               queue:[NSOperationQueue mainQueue]
-                                   completionHandler:
-             ^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-                 if (connectionError == nil && data != nil) {
-                     // Set the image in the imageView
-                     // ...
-                     self.activUser.image = [UIImage imageWithData:data];
-                 }
-             }];
-            
-            // Now add the data to the UI elements
-            // ...
-        }
-    }];
-}
+
+
 @end

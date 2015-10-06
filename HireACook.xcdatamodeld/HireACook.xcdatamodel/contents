@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14D131" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="GeoPoints" representedClassName="GeoPoints" syncable="YES">
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="providerData" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ProviderData" inverseName="geoPoints" inverseEntity="ProviderData" syncable="YES"/>
+    </entity>
+    <entity name="ProviderData" representedClassName="ProviderData" syncable="YES">
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="peopleId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="postCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="profilePicture" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="geoPoints" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GeoPoints" inverseName="providerData" inverseEntity="GeoPoints" syncable="YES"/>
+        <relationship name="imageMedia" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Providermedia" inverseName="providerData" inverseEntity="Providermedia" syncable="YES"/>
+    </entity>
+    <entity name="Providermedia" representedClassName="Providermedia" syncable="YES">
+        <attribute name="image" optional="YES" attributeType="Binary" storedInTruthFile="YES" syncable="YES"/>
+        <attribute name="imageName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="providerData" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ProviderData" inverseName="imageMedia" inverseEntity="ProviderData" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="GeoPoints" positionX="234" positionY="-12" width="128" height="90"/>
+        <element name="ProviderData" positionX="-63" positionY="-18" width="128" height="180"/>
+        <element name="Providermedia" positionX="180" positionY="108" width="128" height="88"/>
+    </elements>
+</model>

@@ -21,10 +21,10 @@
     // [Optional] Track statistics around application opens.
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
-//    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
-//    testObject[@"foo"] = @"bar";
-//    [testObject saveInBackground];
-
+    //    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+    //    testObject[@"foo"] = @"bar";
+    //    [testObject saveInBackground];
+    
 }
 
 + (void)queryWithGeoPoint:(CLLocationCoordinate2D) geoPoint callback:(ParseCompletionBlock) callback;
@@ -39,13 +39,25 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             
-            NSLog(@"Successfully retrieved %lu scores.", (unsigned long)objects.count);
+            NSLog(@"Successfully retrieved %lu count.", (unsigned long)objects.count);
             // Do something with the found objects
             
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                 NSArray *recordDetails = [query findObjects];
-                if(callback){
-                    callback(recordDetails,error);
-                }
+//                for (PFObject * individualRecord in recordDetails)
+//                {
+//                    NSLog(@"value: %@ ", individualRecord);
+//
+//                    //[self processIndividualRecord:individualRecord withContext:updateContext];
+//                }
+//                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    if(callback){
+                        callback(recordDetails,error);
+                    }
+                });
+            });
+
         } else {
             // Details of the failure
             NSLog(@"Error: %@ %@", error, [error userInfo]);

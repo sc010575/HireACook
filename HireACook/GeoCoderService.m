@@ -13,12 +13,12 @@
 @implementation GeoCoderService
 
 + (void) performGeocodingForText:(NSString*) postCode
-                completionBlock:(SearchCompletionBlock)completionBlock
+                 completionBlock:(SearchCompletionBlock)completionBlock
 {
-
-
-//Well it was not a gridref then perform geo coding
-CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    
+    
+    //Well it was not a gridref then perform geo coding
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
     [geocoder geocodeAddressString:postCode completionHandler:^(NSArray *placemarks, NSError *error) {
         if ([placemarks count] > 0) {
             CLPlacemark *placemark = [placemarks objectAtIndex:0];
@@ -31,7 +31,7 @@ CLGeocoder *geocoder = [[CLGeocoder alloc] init];
             }
         }
     }];
-
+    
 }
 
 @end

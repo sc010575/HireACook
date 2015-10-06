@@ -12,31 +12,58 @@ class LaunchingViewController: UIViewController {
     
     @IBOutlet weak var postcodTextField: UITextField!
     
+    @IBOutlet weak var registerButton: UIButton!
+    
+    lazy var coredataQueue: NSOperationQueue={
+        var queue = NSOperationQueue()
+        queue.name = "CoreDataQueue"
+        queue.maxConcurrentOperationCount = 1
+        return queue
+    }()
+    
     var bDataFatched:Bool = false
+    
+    var progressHUD:ProgressHUD!
+    var numberOfRecord:Int = 0
+    private var kvoContext: UInt8 = 1
+    
     
     @IBAction func performSearch(sender: AnyObject) {
         
         // Create and add the view to the screen.
-        let progressHUD = ProgressHUD(text: "Searching..")
+        progressHUD = ProgressHUD(text: "Searching..")
         self.view.addSubview(progressHUD)
         
         GeoCoderService.performGeocodingForText(self.postcodTextField.text, completionBlock: { (location:CLLocationCoordinate2D) -> Void in
-            println("location data  :\(location)")
+            print("location data  :\(location)")
             ParseServiceLocator.queryWithGeoPoint(location, callback: { (record:[AnyObject]!, error:NSError!) -> Void in
-                println("location data  :\(record)")
-                self.bDataFatched = true
-                self.performSegueWithIdentifier("showrecord", sender: self)
+                print("location data  :\(record)")
+                let standardUserdefault = NSUserDefaults.standardUserDefaults()
+                standardUserdefault.setInteger(record.count, forKey: "NumberOfRecords")
+                standardUserdefault.synchronize()
+
+                let storeCoordinator  = (UIApplication.sharedApplication().delegate as! AppDelegate).persistentStoreCoordinator
                 
+                let coreDataOperation = CoreDataOperation(data: record, withSharedStoreCoordinator: storeCoordinator)
+                self.coredataQueue.addOperation(coreDataOperation)
+                
+             })
+            
         })
-            
-            
-            
-        })
+        
+        //Add observer when the operation queue finish
+        self.coredataQueue.addObserver(self, forKeyPath: "operationCount", options: NSKeyValueObservingOptions.New, context: &self.kvoContext)
+
     }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBar.hidden = true
+        super.viewWillAppear(animated)
     }
     
     override func didReceiveMemoryWarning() {
@@ -47,21 +74,32 @@ class LaunchingViewController: UIViewController {
     
     
     // MARK: - Navigation
-    
     override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
-        if self.bDataFatched{
+        if identifier == "goRegistration"{
+            return true
+        }
+        
+        if identifier == "showrecord" && self.bDataFatched{
             return true
         }else{
             return false
         }
+
     }
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        if segue.identifier == "showrecord"{
-            
+
+    // MARK: -KVO
+    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+        if context == &kvoContext {
+            print("Change at keyPath = \(keyPath) for \(object)")
+            if self.coredataQueue.operationCount == 0{
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.bDataFatched = true
+                    self.progressHUD.hide()
+                    self.performSegueWithIdentifier("showrecord", sender: self)
+                })
+            }
+
         }
-    }
-    
+ }
 }

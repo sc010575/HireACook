@@ -10,13 +10,14 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "ParseServiceLocator.h"
+#import "NSManagedObjectContext+Helper.h"
 
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
-
+@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -28,6 +29,10 @@
                                     didFinishLaunchingWithOptions:launchOptions];
     
     [ParseServiceLocator setupParseWithOption:launchOptions];
+    
+    //setup coredata
+    _persistentStoreCoordinator = [NSManagedObjectContext persistentStoreCoordinatorWithName:@"HireACook"];
+
 
     return YES;
 }
@@ -55,7 +60,6 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
-
 
 #pragma mark - Facebook 
 
