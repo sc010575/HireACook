@@ -54,7 +54,8 @@
 #pragma mark - SACollectionViewVerticalScalingCell Private Methods
 - (void)initialize {
     self.backgroundColor = [UIColor clearColor];
-    self.containerView = [DisplayRecordView loadFromNib]; // [[UIView alloc] initWithFrame:self.bounds];
+    self.containerView = [DisplayRecordView loadFromNib]; // [[UIView alloc]
+    self.containerView.frame = self.bounds;
     [self addSubview:self.containerView];
     self.shadeView = [[UIView alloc] initWithFrame:self.bounds];
     self.shadeView.backgroundColor = [UIColor blackColor];

@@ -77,6 +77,7 @@ class LaunchingViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBar.hidden = true
         super.viewWillAppear(animated)
+        self.postcodTextField.text = ""
         self.postcodTextField.becomeFirstResponder()
     }
     

@@ -95,8 +95,6 @@ static NSString *const kCellIdentifier = @"Cell";
         // Update Items
         [self setItems:asynchronousFetchResult.finalResult];
         
-        ProviderData *data = self.items[0];
-        NSLog(@"%@", data);
         weakSelf.weRetirveData = YES;
         // Reload Table View
         dispatch_async(dispatch_get_main_queue(), ^ {
