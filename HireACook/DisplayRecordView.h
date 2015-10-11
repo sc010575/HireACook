@@ -10,4 +10,6 @@
 
 @interface DisplayRecordView : UIView
 
+- (void)createRecordViewWith:(NSString*) imageUrl andFirstNme:(NSString*) theFirstName andLastName:(NSString*) theLastName;
+
 @end

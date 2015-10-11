@@ -29,6 +29,13 @@
             {
                 completionBlock(coordinate);
             }
+        }else{
+            
+            if(completionBlock)
+            {
+                completionBlock(kCLLocationCoordinate2DInvalid);
+            }
+
         }
     }];
     

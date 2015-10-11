@@ -7,10 +7,12 @@
 //
 
 #import "SACollectionViewVerticalScalingCell.h"
+#import "UIView+QuickNibs.h"
+#import "DisplayRecordView.h"
 
 @interface SACollectionViewVerticalScalingCell ()
 
-@property (strong, nonatomic, readwrite) UIView *containerView;
+@property (strong, nonatomic, readwrite) DisplayRecordView *containerView;
 @property (strong, nonatomic) UIView *shadeView;
 
 @end
@@ -52,8 +54,7 @@
 #pragma mark - SACollectionViewVerticalScalingCell Private Methods
 - (void)initialize {
     self.backgroundColor = [UIColor clearColor];
-    self.containerView = [[UIView alloc] initWithFrame:self.bounds];
-    CGRect frame  = self.containerView.frame;
+    self.containerView = [DisplayRecordView loadFromNib]; // [[UIView alloc] initWithFrame:self.bounds];
     [self addSubview:self.containerView];
     self.shadeView = [[UIView alloc] initWithFrame:self.bounds];
     self.shadeView.backgroundColor = [UIColor blackColor];
@@ -70,7 +71,10 @@
     self.shadeView.alpha = shadeAlpha;
 }
 
+- (void)createRecordViewWith:(NSString*) imageUrl andFirstNme:(NSString*) theFirstName andLastName:(NSString*) theLastName{
+    
+    [self.containerView createRecordViewWith:imageUrl andFirstNme:theFirstName andLastName:theLastName];
+}
+
+
 @end
-// Copyright belongs to original author
-// http://code4app.net (en) http://code4app.com (cn)
-// From the most professional code share website: Code4App.net

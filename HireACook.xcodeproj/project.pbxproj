@@ -17,7 +17,6 @@
 		C50E5C921B38284A00C18E1F /* LaunchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50E5C911B38284A00C18E1F /* LaunchingViewController.swift */; };
 		C50E5C951B38421800C18E1F /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50E5C941B38421800C18E1F /* ProgressHUD.swift */; };
 		C50E5C981B38707000C18E1F /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C50E5C971B38707000C18E1F /* RegistrationViewController.m */; };
-		C50E5CA51B39A20300C18E1F /* HomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C50E5CA41B39A20300C18E1F /* HomeCollectionViewCell.m */; };
 		C50E5CAB1B3DA79100C18E1F /* SACollectionViewVerticalScalingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C50E5CA81B3DA79100C18E1F /* SACollectionViewVerticalScalingCell.m */; };
 		C50E5CAC1B3DA79100C18E1F /* SACollectionViewVerticalScalingFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C50E5CAA1B3DA79100C18E1F /* SACollectionViewVerticalScalingFlowLayout.m */; };
 		C51846E71B0605BB00A36801 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C51846E61B0605BB00A36801 /* main.m */; };
@@ -56,6 +55,9 @@
 		C5E2C8171B4541EB001498D4 /* CoreDataErrorHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E2C8121B4541EB001498D4 /* CoreDataErrorHandling.m */; };
 		C5E2C8181B4541EB001498D4 /* NSManagedObject+CoreDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E2C8141B4541EB001498D4 /* NSManagedObject+CoreDataHandler.m */; };
 		C5E2C8191B4541EB001498D4 /* NSManagedObjectContext+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E2C8161B4541EB001498D4 /* NSManagedObjectContext+Helper.m */; };
+		C5E6DD471BCA4C910067A364 /* UIColor+colorWithHex.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E6DD421BCA4C910067A364 /* UIColor+colorWithHex.m */; settings = {ASSET_TAGS = (); }; };
+		C5E6DD481BCA4C910067A364 /* UIImage+ImageColor.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E6DD441BCA4C910067A364 /* UIImage+ImageColor.m */; settings = {ASSET_TAGS = (); }; };
+		C5E6DD491BCA4C910067A364 /* UIView+QuickNibs.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E6DD461BCA4C910067A364 /* UIView+QuickNibs.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,8 +87,6 @@
 		C50E5C941B38421800C18E1F /* ProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		C50E5C961B38707000C18E1F /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
 		C50E5C971B38707000C18E1F /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
-		C50E5CA31B39A20300C18E1F /* HomeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCollectionViewCell.h; sourceTree = "<group>"; };
-		C50E5CA41B39A20300C18E1F /* HomeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCollectionViewCell.m; sourceTree = "<group>"; };
 		C50E5CA71B3DA79100C18E1F /* SACollectionViewVerticalScalingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SACollectionViewVerticalScalingCell.h; sourceTree = "<group>"; };
 		C50E5CA81B3DA79100C18E1F /* SACollectionViewVerticalScalingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SACollectionViewVerticalScalingCell.m; sourceTree = "<group>"; };
 		C50E5CA91B3DA79100C18E1F /* SACollectionViewVerticalScalingFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SACollectionViewVerticalScalingFlowLayout.h; sourceTree = "<group>"; };
@@ -143,6 +143,12 @@
 		C5E2C8141B4541EB001498D4 /* NSManagedObject+CoreDataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+CoreDataHandler.m"; sourceTree = "<group>"; };
 		C5E2C8151B4541EB001498D4 /* NSManagedObjectContext+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+Helper.h"; sourceTree = "<group>"; };
 		C5E2C8161B4541EB001498D4 /* NSManagedObjectContext+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+Helper.m"; sourceTree = "<group>"; };
+		C5E6DD411BCA4C910067A364 /* UIColor+colorWithHex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+colorWithHex.h"; sourceTree = "<group>"; };
+		C5E6DD421BCA4C910067A364 /* UIColor+colorWithHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+colorWithHex.m"; sourceTree = "<group>"; };
+		C5E6DD431BCA4C910067A364 /* UIImage+ImageColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageColor.h"; sourceTree = "<group>"; };
+		C5E6DD441BCA4C910067A364 /* UIImage+ImageColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageColor.m"; sourceTree = "<group>"; };
+		C5E6DD451BCA4C910067A364 /* UIView+QuickNibs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+QuickNibs.h"; sourceTree = "<group>"; };
+		C5E6DD461BCA4C910067A364 /* UIView+QuickNibs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+QuickNibs.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +232,7 @@
 		C50E5C991B39A04300C18E1F /* ShowRoom */ = {
 			isa = PBXGroup;
 			children = (
+				C50E5C931B3841EF00C18E1F /* ProgressHud */,
 				C50E5CA21B39A12800C18E1F /* Registration */,
 				C50E5CA11B39A11A00C18E1F /* Settings */,
 				C50E5CA01B39A10700C18E1F /* PostAid */,
@@ -241,6 +248,8 @@
 		C50E5C9A1B39A05400C18E1F /* BackOffice */ = {
 			isa = PBXGroup;
 			children = (
+				C5E6DD401BCA4C910067A364 /* Category */,
+				C540305C1BC595E000917D44 /* GeoCoder */,
 				C5DCEEC31B4AC0DE0093EFB5 /* Model */,
 				C5DCEEBD1B4573800093EFB5 /* HireACook.xcdatamodeld */,
 				C5E2C8101B4541EB001498D4 /* CoreDataHandler */,
@@ -255,8 +264,6 @@
 				C50E5CA61B3DA79100C18E1F /* SACollectionViewVerticalScalingFlowLayout */,
 				C51846EB1B0605BB00A36801 /* HomeViewController.h */,
 				C51846EC1B0605BB00A36801 /* HomeViewController.m */,
-				C50E5CA31B39A20300C18E1F /* HomeCollectionViewCell.h */,
-				C50E5CA41B39A20300C18E1F /* HomeCollectionViewCell.m */,
 				C549BF671B7B85F900B817CC /* DisplayRecordView.h */,
 				C549BF681B7B85F900B817CC /* DisplayRecordView.m */,
 				C549BF6A1B7B861C00B817CC /* DisplayRecordView.xib */,
@@ -359,7 +366,6 @@
 			children = (
 				C50E5C9A1B39A05400C18E1F /* BackOffice */,
 				C50E5C991B39A04300C18E1F /* ShowRoom */,
-				C50E5C931B3841EF00C18E1F /* ProgressHud */,
 				C51846E81B0605BB00A36801 /* AppDelegate.h */,
 				C51846E91B0605BB00A36801 /* AppDelegate.m */,
 				C50E5C801B32DC7800C18E1F /* HireACook-Bridging-Header.h */,
@@ -367,8 +373,6 @@
 				C51846F41B0605BB00A36801 /* Images.xcassets */,
 				C51846F61B0605BB00A36801 /* LaunchScreen.xib */,
 				C51846E41B0605BB00A36801 /* Supporting Files */,
-				C50E5C8E1B3820C600C18E1F /* GeoCoderService.h */,
-				C50E5C8F1B3820C600C18E1F /* GeoCoderService.m */,
 			);
 			path = HireACook;
 			sourceTree = "<group>";
@@ -400,6 +404,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C540305C1BC595E000917D44 /* GeoCoder */ = {
+			isa = PBXGroup;
+			children = (
+				C50E5C8E1B3820C600C18E1F /* GeoCoderService.h */,
+				C50E5C8F1B3820C600C18E1F /* GeoCoderService.m */,
+			);
+			name = GeoCoder;
+			sourceTree = "<group>";
+		};
 		C5DCEEC31B4AC0DE0093EFB5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -426,6 +439,19 @@
 				C5DCEEC11B4595920093EFB5 /* CoreDataOperation.m */,
 			);
 			path = CoreDataHandler;
+			sourceTree = "<group>";
+		};
+		C5E6DD401BCA4C910067A364 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				C5E6DD411BCA4C910067A364 /* UIColor+colorWithHex.h */,
+				C5E6DD421BCA4C910067A364 /* UIColor+colorWithHex.m */,
+				C5E6DD431BCA4C910067A364 /* UIImage+ImageColor.h */,
+				C5E6DD441BCA4C910067A364 /* UIImage+ImageColor.m */,
+				C5E6DD451BCA4C910067A364 /* UIView+QuickNibs.h */,
+				C5E6DD461BCA4C910067A364 /* UIView+QuickNibs.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		F21F777717AA8FAE2A2F1063 /* Pods */ = {
@@ -595,10 +621,12 @@
 				C50E5CAB1B3DA79100C18E1F /* SACollectionViewVerticalScalingCell.m in Sources */,
 				C5DB4F351B5107A900464E28 /* GeoPoints.m in Sources */,
 				C50E5C821B32DC7900C18E1F /* MapViewController.swift in Sources */,
+				C5E6DD471BCA4C910067A364 /* UIColor+colorWithHex.m in Sources */,
 				C5DCEED31B4AC1F00093EFB5 /* Providermedia.m in Sources */,
 				C50E5C8D1B381BCB00C18E1F /* ParseServiceLocator.m in Sources */,
+				C5E6DD481BCA4C910067A364 /* UIImage+ImageColor.m in Sources */,
 				C5DCEEBF1B4573800093EFB5 /* HireACook.xcdatamodeld in Sources */,
-				C50E5CA51B39A20300C18E1F /* HomeCollectionViewCell.m in Sources */,
+				C5E6DD491BCA4C910067A364 /* UIView+QuickNibs.m in Sources */,
 				C5E2C8191B4541EB001498D4 /* NSManagedObjectContext+Helper.m in Sources */,
 				C50E5C981B38707000C18E1F /* RegistrationViewController.m in Sources */,
 				C51846E71B0605BB00A36801 /* main.m in Sources */,

@@ -17,9 +17,10 @@ static void *ProgressContext = &ProgressContext;
 
 @interface HomeViewController ()
 
-@property (strong, nonatomic) NSArray *items;
+@property (nonatomic, strong) NSArray *items;
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
-@property(strong, nonatomic)  NSNumber *numberOfRecordToShow;
+@property (nonatomic, strong) NSNumber *numberOfRecordToShow;
+@property (nonatomic, assign) BOOL weRetirveData;
 
 @end
 
@@ -33,6 +34,8 @@ static NSString *const kCellIdentifier = @"Cell";
     //Use the main persistentStoreCoordinator
     AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     self.managedObjectContext = [NSManagedObjectContext managedObjectContextWithStoreCoordinator:appDelegate.persistentStoreCoordinator];
+    self.items = [NSArray array];
+    self.weRetirveData = NO;
     [self performAsyncFetch];
     
 }
@@ -87,12 +90,18 @@ static NSString *const kCellIdentifier = @"Cell";
 }
 
 - (void)processAsynchronousFetchResult:(NSAsynchronousFetchResult *)asynchronousFetchResult {
+    __weak HomeViewController *weakSelf = self;
     if (asynchronousFetchResult.finalResult) {
         // Update Items
         [self setItems:asynchronousFetchResult.finalResult];
         
+        ProviderData *data = self.items[0];
+        NSLog(@"%@", data);
+        weakSelf.weRetirveData = YES;
         // Reload Table View
-        //[self.tableView reloadData];
+        dispatch_async(dispatch_get_main_queue(), ^ {
+        [weakSelf.collectionView reloadData];
+        });
     }
 }
 
@@ -116,22 +125,26 @@ static NSString *const kCellIdentifier = @"Cell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-   // return 30;
-    
     return [self.numberOfRecordToShow integerValue];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     SACollectionViewVerticalScalingCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCellIdentifier forIndexPath:indexPath];
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:cell.bounds];
-    NSInteger number = indexPath.row % 7 + 1;
-    imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"0%@", @(number)]];
-    UILabel *mylabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 10, 200, 30)];
-    mylabel.text = @"Suman's image";
-    mylabel.textColor = [UIColor whiteColor];
-    [cell.containerView addSubview:mylabel ];
-    [cell.containerView addSubview:imageView];
-    [cell.containerView bringSubviewToFront:mylabel];
+    
+    if(self.weRetirveData)
+    {
+        ProviderData *data = self.items[indexPath.row];
+        [cell createRecordViewWith:data.profilePicture andFirstNme:data.firstName andLastName:data.lastName];
+    }
+//    UIImageView *imageView = [[UIImageView alloc] initWithFrame:cell.bounds];
+//    NSInteger number = indexPath.row % 7 + 1;
+//    imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"0%@", @(number)]];
+//    UILabel *mylabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 10, 200, 30)];
+//    mylabel.text = @"Suman's image";
+//    mylabel.textColor = [UIColor whiteColor];
+//    [cell.containerView addSubview:mylabel ];
+//    [cell.containerView addSubview:imageView];
+//    [cell.containerView bringSubviewToFront:mylabel];
     return cell;
 }
 

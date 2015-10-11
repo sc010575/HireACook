@@ -19,7 +19,7 @@ class LaunchingViewController: UIViewController {
         queue.name = "CoreDataQueue"
         queue.maxConcurrentOperationCount = 1
         return queue
-    }()
+        }()
     
     var bDataFatched:Bool = false
     
@@ -35,25 +35,38 @@ class LaunchingViewController: UIViewController {
         self.view.addSubview(progressHUD)
         
         GeoCoderService.performGeocodingForText(self.postcodTextField.text, completionBlock: { (location:CLLocationCoordinate2D) -> Void in
-            print("location data  :\(location)")
-            ParseServiceLocator.queryWithGeoPoint(location, callback: { (record:[AnyObject]!, error:NSError!) -> Void in
-                print("location data  :\(record)")
-                let standardUserdefault = NSUserDefaults.standardUserDefaults()
-                standardUserdefault.setInteger(record.count, forKey: "NumberOfRecords")
-                standardUserdefault.synchronize()
+            if !CLLocationCoordinate2DIsValid(location)
+            {
+                dispatch_async(dispatch_get_main_queue(), {
+                    
+                    let alertView = UIAlertController(title: "Postcode error", message: "No match found", preferredStyle: .Alert)
+                    alertView.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+                    self.presentViewController(alertView, animated: true, completion: nil)
+                    self.progressHUD.hide()
+                    self.postcodTextField.text = ""
 
-                let storeCoordinator  = (UIApplication.sharedApplication().delegate as! AppDelegate).persistentStoreCoordinator
+                })
                 
-                let coreDataOperation = CoreDataOperation(data: record, withSharedStoreCoordinator: storeCoordinator)
-                self.coredataQueue.addOperation(coreDataOperation)
+            }else{
                 
-             })
-            
+                print("location data  :\(location)")
+                ParseServiceLocator.queryWithGeoPoint(location, callback: { (record:[AnyObject]!, error:NSError!) -> Void in
+                    print("location data  :\(record)")
+                    let standardUserdefault = NSUserDefaults.standardUserDefaults()
+                    standardUserdefault.setInteger(record.count, forKey: "NumberOfRecords")
+                    standardUserdefault.synchronize()
+                    
+                    let storeCoordinator  = (UIApplication.sharedApplication().delegate as! AppDelegate).persistentStoreCoordinator
+                    
+                    let coreDataOperation = CoreDataOperation(data: record, withSharedStoreCoordinator: storeCoordinator)
+                    self.coredataQueue.addOperation(coreDataOperation)
+                })
+            }
         })
         
         //Add observer when the operation queue finish
         self.coredataQueue.addObserver(self, forKeyPath: "operationCount", options: NSKeyValueObservingOptions.New, context: &self.kvoContext)
-
+        
     }
     
     
@@ -64,6 +77,7 @@ class LaunchingViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBar.hidden = true
         super.viewWillAppear(animated)
+        self.postcodTextField.becomeFirstResponder()
     }
     
     override func didReceiveMemoryWarning() {
@@ -84,10 +98,10 @@ class LaunchingViewController: UIViewController {
         }else{
             return false
         }
-
+        
     }
     
-
+    
     // MARK: -KVO
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         if context == &kvoContext {
@@ -99,7 +113,7 @@ class LaunchingViewController: UIViewController {
                     self.performSegueWithIdentifier("showrecord", sender: self)
                 })
             }
-
+            
         }
- }
+    }
 }

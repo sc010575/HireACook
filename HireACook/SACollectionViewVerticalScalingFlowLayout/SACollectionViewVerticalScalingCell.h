@@ -7,14 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DisplayRecordView.h"
 
 @interface SACollectionViewVerticalScalingCell : UICollectionViewCell
 
-@property (strong, nonatomic, readonly) UIView *containerView;
+@property (strong, nonatomic, readonly) DisplayRecordView *containerView;
 @property (assign, nonatomic) CGAffineTransform shadeTransform;
 @property (assign, nonatomic) CGFloat shadeAlpha;
 
+- (void)createRecordViewWith:(NSString*) imageUrl andFirstNme:(NSString*) theFirstName andLastName:(NSString*) theLastName;
+
 @end
-// Copyright belongs to original author
-// http://code4app.net (en) http://code4app.com (cn)
-// From the most professional code share website: Code4App.net4
