@@ -107,6 +107,7 @@ static NSString *const kCellIdentifier = @"Cell";
 {
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden  = NO;
+    self.navigationController.hidesBarsOnSwipe = YES;
     [self.collectionView registerClass:[SACollectionViewVerticalScalingCell class] forCellWithReuseIdentifier:kCellIdentifier];
     self.collectionView.dataSource = self;
     SACollectionViewVerticalScalingFlowLayout *layout = [[SACollectionViewVerticalScalingFlowLayout alloc] init];

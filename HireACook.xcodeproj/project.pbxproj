@@ -47,6 +47,8 @@
 		C54780C61B0E11570006FE37 /* HireACook.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C54780C51B0E11570006FE37 /* HireACook.xcassets */; };
 		C549BF691B7B85F900B817CC /* DisplayRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = C549BF681B7B85F900B817CC /* DisplayRecordView.m */; };
 		C549BF6B1B7B861C00B817CC /* DisplayRecordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C549BF6A1B7B861C00B817CC /* DisplayRecordView.xib */; };
+		C5A80A7A1BE4C426008AC817 /* UIViewExtensionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A80A791BE4C426008AC817 /* UIViewExtensionAnimation.swift */; settings = {ASSET_TAGS = (); }; };
+		C5A80A7C1BE637E8008AC817 /* ValidationUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A80A7B1BE637E8008AC817 /* ValidationUtility.swift */; settings = {ASSET_TAGS = (); }; };
 		C5DB4F321B5035DC00464E28 /* ProviderData.m in Sources */ = {isa = PBXBuildFile; fileRef = C5DB4F311B5035DC00464E28 /* ProviderData.m */; };
 		C5DB4F351B5107A900464E28 /* GeoPoints.m in Sources */ = {isa = PBXBuildFile; fileRef = C5DB4F341B5107A900464E28 /* GeoPoints.m */; };
 		C5DCEEBF1B4573800093EFB5 /* HireACook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C5DCEEBD1B4573800093EFB5 /* HireACook.xcdatamodeld */; };
@@ -127,6 +129,8 @@
 		C549BF671B7B85F900B817CC /* DisplayRecordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayRecordView.h; sourceTree = "<group>"; };
 		C549BF681B7B85F900B817CC /* DisplayRecordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayRecordView.m; sourceTree = "<group>"; };
 		C549BF6A1B7B861C00B817CC /* DisplayRecordView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DisplayRecordView.xib; sourceTree = "<group>"; };
+		C5A80A791BE4C426008AC817 /* UIViewExtensionAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensionAnimation.swift; sourceTree = "<group>"; };
+		C5A80A7B1BE637E8008AC817 /* ValidationUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationUtility.swift; sourceTree = "<group>"; };
 		C5DB4F301B5035DC00464E28 /* ProviderData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProviderData.h; path = ../ProviderData.h; sourceTree = "<group>"; };
 		C5DB4F311B5035DC00464E28 /* ProviderData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProviderData.m; path = ../ProviderData.m; sourceTree = "<group>"; };
 		C5DB4F331B5107A900464E28 /* GeoPoints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeoPoints.h; path = ../GeoPoints.h; sourceTree = "<group>"; };
@@ -156,6 +160,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C54780A31B0883980006FE37 /* QuartzCore.framework in Frameworks */,
 				C54780A51B0883CD0006FE37 /* CoreLocation.framework in Frameworks */,
 				C54780BD1B0885F80006FE37 /* Social.framework in Frameworks */,
 				C54780BB1B0885F10006FE37 /* Accounts.framework in Frameworks */,
@@ -172,7 +177,6 @@
 				C51847101B062A3700A36801 /* FBSDKLoginKit.framework in Frameworks */,
 				C518470F1B062A3600A36801 /* FBSDKCoreKit.framework in Frameworks */,
 				C54780BF1B0888030006FE37 /* Bolts.framework in Frameworks */,
-				C54780A31B0883980006FE37 /* QuartzCore.framework in Frameworks */,
 				219EFA1CD6375382F983CD0E /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,12 +252,14 @@
 		C50E5C9A1B39A05400C18E1F /* BackOffice */ = {
 			isa = PBXGroup;
 			children = (
+				C5A80A781BE4C3F4008AC817 /* Extension */,
 				C5E6DD401BCA4C910067A364 /* Category */,
 				C540305C1BC595E000917D44 /* GeoCoder */,
 				C5DCEEC31B4AC0DE0093EFB5 /* Model */,
 				C5DCEEBD1B4573800093EFB5 /* HireACook.xcdatamodeld */,
 				C5E2C8101B4541EB001498D4 /* CoreDataHandler */,
 				C50E5C8A1B381B3E00C18E1F /* ParseServices */,
+				C5A80A7B1BE637E8008AC817 /* ValidationUtility.swift */,
 			);
 			name = BackOffice;
 			sourceTree = "<group>";
@@ -411,6 +417,14 @@
 				C50E5C8F1B3820C600C18E1F /* GeoCoderService.m */,
 			);
 			name = GeoCoder;
+			sourceTree = "<group>";
+		};
+		C5A80A781BE4C3F4008AC817 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C5A80A791BE4C426008AC817 /* UIViewExtensionAnimation.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		C5DCEEC31B4AC0DE0093EFB5 /* Model */ = {
@@ -611,6 +625,7 @@
 				C5E2C8181B4541EB001498D4 /* NSManagedObject+CoreDataHandler.m in Sources */,
 				C50E5CAC1B3DA79100C18E1F /* SACollectionViewVerticalScalingFlowLayout.m in Sources */,
 				C5DB4F321B5035DC00464E28 /* ProviderData.m in Sources */,
+				C5A80A7C1BE637E8008AC817 /* ValidationUtility.swift in Sources */,
 				C50E5C951B38421800C18E1F /* ProgressHUD.swift in Sources */,
 				C50E5C861B32DE6400C18E1F /* SettingsViewController.swift in Sources */,
 				C50E5C921B38284A00C18E1F /* LaunchingViewController.swift in Sources */,
@@ -618,6 +633,7 @@
 				C50E5C881B32E26500C18E1F /* PostAddViewController.swift in Sources */,
 				C50E5C901B3820C600C18E1F /* GeoCoderService.m in Sources */,
 				C51846ED1B0605BB00A36801 /* HomeViewController.m in Sources */,
+				C5A80A7A1BE4C426008AC817 /* UIViewExtensionAnimation.swift in Sources */,
 				C50E5CAB1B3DA79100C18E1F /* SACollectionViewVerticalScalingCell.m in Sources */,
 				C5DB4F351B5107A900464E28 /* GeoPoints.m in Sources */,
 				C50E5C821B32DC7900C18E1F /* MapViewController.swift in Sources */,

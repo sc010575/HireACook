@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YAu-1Q-ecI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YAu-1Q-ecI">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
@@ -9,6 +9,7 @@
         <!--Navigation Controller-->
         <scene sceneID="zMP-wn-4nE">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B82-q4-DDU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="lNe-F8-Xp9" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3fp-9g-0Ls">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -19,9 +20,8 @@
                         <segue destination="Rmb-l6-FvZ" kind="relationship" relationship="rootViewController" id="8N1-wc-KLZ"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="B82-q4-DDU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3017" y="-3349"/>
+            <point key="canvasLocation" x="-3868" y="-3852"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sJ3-XP-JJa">
@@ -38,7 +38,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cai-Rl-Meg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5969" y="-1739"/>
+            <point key="canvasLocation" x="-5307" y="-2923"/>
         </scene>
         <!--Launching View Controller-->
         <scene sceneID="N2I-Cx-7eX">
@@ -58,12 +58,12 @@ Cg
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backGroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="zJh-OT-j4M">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
-                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.2838459176" green="0.64361897069999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <view alpha="0.74999999999999978" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ynD-vF-M3D">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ynD-vF-M3D">
                                 <rect key="frame" x="150" y="119" width="300" height="168"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xQ-Ne-BHx">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xQ-Ne-BHx">
                                         <rect key="frame" x="94" y="118" width="113" height="30"/>
                                         <animations/>
                                         <state key="normal" title="Go and Find">
@@ -75,41 +75,46 @@ Cg
                                             <segue destination="49e-Tb-3d3" kind="show" identifier="showrecord" id="dbX-Rd-kjc"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Post Code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UgY-5h-2QX">
-                                        <rect key="frame" x="53" y="9" width="195" height="42"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6v6-vh-77h">
+                                        <rect key="frame" x="219" y="0.0" width="81" height="39"/>
                                         <animations/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="81" id="nVM-EM-Mgb"/>
+                                        </constraints>
+                                        <state key="normal" title="SIGN IN">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="lNe-F8-Xp9" kind="show" identifier="goRegistration" id="MtV-vR-1nK"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter Post Code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yVM-e5-gm3">
+                                        <rect key="frame" x="59" y="66" width="181" height="36"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="181" id="EgM-Ua-u3k"/>
+                                            <constraint firstAttribute="height" constant="36" id="hdT-iN-90I"/>
+                                        </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no"/>
+                                    </textField>
                                 </subviews>
                                 <animations/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="6v6-vh-77h" secondAttribute="trailing" id="1lK-hE-fOg"/>
+                                    <constraint firstItem="yVM-e5-gm3" firstAttribute="centerY" secondItem="ynD-vF-M3D" secondAttribute="centerY" id="D5k-3j-Z2s"/>
                                     <constraint firstAttribute="height" constant="168" id="NvP-4L-1EG"/>
+                                    <constraint firstItem="yVM-e5-gm3" firstAttribute="centerX" secondItem="ynD-vF-M3D" secondAttribute="centerX" id="R8t-b0-Aw7"/>
+                                    <constraint firstItem="6v6-vh-77h" firstAttribute="top" secondItem="ynD-vF-M3D" secondAttribute="top" id="SG4-9z-dPD"/>
+                                    <constraint firstItem="yVM-e5-gm3" firstAttribute="top" secondItem="6v6-vh-77h" secondAttribute="bottom" constant="27" id="W9b-NP-O5E"/>
+                                    <constraint firstItem="2xQ-Ne-BHx" firstAttribute="top" secondItem="yVM-e5-gm3" secondAttribute="bottom" constant="16" id="YeJ-Xc-DvA"/>
                                     <constraint firstAttribute="width" constant="300" id="dcz-Cm-VEB"/>
+                                    <constraint firstItem="2xQ-Ne-BHx" firstAttribute="leading" secondItem="ynD-vF-M3D" secondAttribute="leading" constant="94" id="fdL-ml-DZy"/>
+                                    <constraint firstItem="2xQ-Ne-BHx" firstAttribute="centerX" secondItem="ynD-vF-M3D" secondAttribute="centerX" id="lUm-1E-ClS"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yVM-e5-gm3">
-                                <rect key="frame" x="210" y="183" width="181" height="30"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="181" id="EgM-Ua-u3k"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6v6-vh-77h">
-                                <rect key="frame" x="150" y="72" width="300" height="39"/>
-                                <animations/>
-                                <state key="normal" title="Register">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="lNe-F8-Xp9" kind="show" identifier="goRegistration" id="78x-bl-IQ2"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -120,24 +125,20 @@ Cg
                             <constraint firstItem="zJh-OT-j4M" firstAttribute="leading" secondItem="NMa-3F-pdi" secondAttribute="leading" id="8CI-cm-5i8"/>
                             <constraint firstItem="zJh-OT-j4M" firstAttribute="trailing" secondItem="NMa-3F-pdi" secondAttribute="trailingMargin" constant="20" id="Gtz-lf-b4e"/>
                             <constraint firstItem="zJh-OT-j4M" firstAttribute="top" secondItem="NMa-3F-pdi" secondAttribute="topMargin" id="OH5-0r-6Qm"/>
-                            <constraint firstItem="6v6-vh-77h" firstAttribute="trailing" secondItem="ynD-vF-M3D" secondAttribute="trailing" id="SrI-hn-RQi"/>
-                            <constraint firstItem="ynD-vF-M3D" firstAttribute="centerY" secondItem="yVM-e5-gm3" secondAttribute="centerY" constant="5" id="XJV-yZ-jPF"/>
-                            <constraint firstItem="ynD-vF-M3D" firstAttribute="top" secondItem="6v6-vh-77h" secondAttribute="bottom" constant="8" symbolic="YES" id="f6x-6n-myh"/>
                             <constraint firstItem="ynD-vF-M3D" firstAttribute="top" secondItem="Utw-64-Nxi" secondAttribute="bottom" constant="55" id="iK4-GI-N5R"/>
-                            <constraint firstAttribute="centerX" secondItem="6v6-vh-77h" secondAttribute="centerX" id="kTu-bh-snn"/>
-                            <constraint firstItem="6v6-vh-77h" firstAttribute="top" secondItem="Utw-64-Nxi" secondAttribute="bottom" constant="8" symbolic="YES" id="lSn-7N-x6c"/>
-                            <constraint firstItem="yVM-e5-gm3" firstAttribute="centerX" secondItem="ynD-vF-M3D" secondAttribute="centerX" id="tTj-Xv-mcd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3ie-Z0-frL"/>
                     <connections>
+                        <outlet property="mainBannerView" destination="ynD-vF-M3D" id="Pc8-e1-dT7"/>
                         <outlet property="postcodTextField" destination="yVM-e5-gm3" id="9bm-EP-hr2"/>
                         <outlet property="registerButton" destination="6v6-vh-77h" id="7E4-8h-gum"/>
+                        <outlet property="viewTopLayoutConstraint" destination="iK4-GI-N5R" id="eeQ-Jh-9W2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fCx-2l-jTy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5076" y="-1773"/>
+            <point key="canvasLocation" x="-4588" y="-2909"/>
         </scene>
         <!--myCook-->
         <scene sceneID="wg7-f3-ORb">
@@ -180,7 +181,7 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2974" y="-1065"/>
+            <point key="canvasLocation" x="-3718" y="-1425"/>
         </scene>
         <!--Map-->
         <scene sceneID="eg9-hn-6Ss">
@@ -200,7 +201,7 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ua-R0-LNT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2980" y="-344"/>
+            <point key="canvasLocation" x="-3724" y="-672"/>
         </scene>
         <!--Registration View Controller-->
         <scene sceneID="Z4s-EC-h5o">
@@ -232,14 +233,20 @@ Cg
                             <constraint firstItem="pLo-ao-cqv" firstAttribute="top" secondItem="i3k-IF-9mM" secondAttribute="bottom" constant="209" id="pwC-Yg-STY"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="PMb-HN-kBo"/>
+                    <navigationItem key="navigationItem" id="PMb-HN-kBo">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="done" id="uWs-nD-UBB">
+                            <connections>
+                                <segue destination="hE7-bd-siS" kind="presentation" modalPresentationStyle="fullScreen" id="xs0-vg-Hn6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="loginButton" destination="i3k-IF-9mM" id="5gC-e6-Kjk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UgX-MO-uzq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2265" y="-3393"/>
+            <point key="canvasLocation" x="-3172" y="-3836"/>
         </scene>
         <!--Post-->
         <scene sceneID="kkd-h9-zYH">
@@ -259,7 +266,7 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dOo-4T-Cpt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3789" y="-2027"/>
+            <point key="canvasLocation" x="-3685" y="-2923"/>
         </scene>
         <!--Home-->
         <scene sceneID="jIl-Ka-Nq9">
@@ -278,7 +285,7 @@ Cg
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="1x2-VT-7M0">
-                                <rect key="frame" x="0.0" y="64" width="50" height="50"/>
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -298,7 +305,7 @@ Cg
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ydk-ZS-Rdh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2912" y="-2063"/>
+            <point key="canvasLocation" x="-3752" y="-2143"/>
         </scene>
         <!--Favourittes-->
         <scene sceneID="oTa-jl-IYO">
@@ -318,7 +325,7 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lpE-ZD-gBx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3810" y="-32"/>
+            <point key="canvasLocation" x="-4578" y="-1184"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -340,11 +347,14 @@ Cg
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3868" y="-1248"/>
+            <point key="canvasLocation" x="-4588" y="-2056"/>
         </scene>
     </scenes>
     <resources>
         <image name="backGroundImage" width="540" height="960"/>
         <image name="second" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="xs0-vg-Hn6"/>
+    </inferredMetricsTieBreakers>
 </document>

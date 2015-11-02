@@ -40,7 +40,7 @@
 
     AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"Response: %@", responseObject);
+       // NSLog(@"Response: %@", responseObject);
         _imageView.image = [UIImage imageWithData:responseObject];
         [weakSelf.waitIndicator stopAnimating];
        

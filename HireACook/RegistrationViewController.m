@@ -24,7 +24,8 @@
     [super viewDidLoad];
     self.loginButton.readPermissions = @[@"public_profile", @"email", @"user_friends"];
     self.loginButton.delegate = self;
-    
+    self.navigationController.navigationBar.hidden  = NO;
+
     if ([FBSDKAccessToken currentAccessToken]) {
         // User is logged in, do work such as go to next view controller.
         [self returnUserData];

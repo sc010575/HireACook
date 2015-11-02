@@ -13,7 +13,9 @@ class LaunchingViewController: UIViewController {
     @IBOutlet weak var postcodTextField: UITextField!
     
     @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var viewTopLayoutConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var mainBannerView: UIView!
     lazy var coredataQueue: NSOperationQueue={
         var queue = NSOperationQueue()
         queue.name = "CoreDataQueue"
@@ -30,6 +32,25 @@ class LaunchingViewController: UIViewController {
     
     @IBAction func performSearch(sender: AnyObject) {
         
+        if self.postcodTextField.text == "" {
+            
+            let alertView = UIAlertController(title: "Postcode error", message: "Please enter a Postcode", preferredStyle: .Alert)
+            alertView.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+            self.presentViewController(alertView, animated: true, completion: nil)
+            return
+        }
+        
+        if   !self.postcodTextField.text!.isAValidPostCode(){
+            let alertView = UIAlertController(title: "Postcode error", message: "Please enter a valid Postcode", preferredStyle: .Alert)
+            alertView.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+            self.presentViewController(alertView, animated: true, completion: nil)
+            self.postcodTextField.text = ""
+            
+            return
+        }
+        
+        
+        
         // Create and add the view to the screen.
         progressHUD = ProgressHUD(text: "Searching..")
         self.view.addSubview(progressHUD)
@@ -44,7 +65,7 @@ class LaunchingViewController: UIViewController {
                     self.presentViewController(alertView, animated: true, completion: nil)
                     self.progressHUD.hide()
                     self.postcodTextField.text = ""
-
+                    
                 })
                 
             }else{
@@ -71,14 +92,21 @@ class LaunchingViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        self.mainBannerView.hidden = true
+        
     }
     
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBar.hidden = true
         super.viewWillAppear(animated)
+        
+        self.mainBannerView.hidden = false
+        self.mainBannerView.slideInFromTop()
         self.postcodTextField.text = ""
         self.postcodTextField.becomeFirstResponder()
+        
     }
     
     override func didReceiveMemoryWarning() {
