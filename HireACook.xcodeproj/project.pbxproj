@@ -24,7 +24,6 @@
 		C51846ED1B0605BB00A36801 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C51846EC1B0605BB00A36801 /* HomeViewController.m */; };
 		C51846F01B0605BB00A36801 /* MyChoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C51846EF1B0605BB00A36801 /* MyChoiceViewController.m */; };
 		C51846F31B0605BB00A36801 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C51846F11B0605BB00A36801 /* Main.storyboard */; };
-		C51846F51B0605BB00A36801 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C51846F41B0605BB00A36801 /* Images.xcassets */; };
 		C51846F81B0605BB00A36801 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C51846F61B0605BB00A36801 /* LaunchScreen.xib */; };
 		C51847041B0605BB00A36801 /* HireACookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C51847031B0605BB00A36801 /* HireACookTests.m */; };
 		C518470F1B062A3600A36801 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C518470D1B062A3600A36801 /* FBSDKCoreKit.framework */; };
@@ -47,8 +46,11 @@
 		C54780C61B0E11570006FE37 /* HireACook.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C54780C51B0E11570006FE37 /* HireACook.xcassets */; };
 		C549BF691B7B85F900B817CC /* DisplayRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = C549BF681B7B85F900B817CC /* DisplayRecordView.m */; };
 		C549BF6B1B7B861C00B817CC /* DisplayRecordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C549BF6A1B7B861C00B817CC /* DisplayRecordView.xib */; };
-		C5A80A7A1BE4C426008AC817 /* UIViewExtensionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A80A791BE4C426008AC817 /* UIViewExtensionAnimation.swift */; settings = {ASSET_TAGS = (); }; };
-		C5A80A7C1BE637E8008AC817 /* ValidationUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A80A7B1BE637E8008AC817 /* ValidationUtility.swift */; settings = {ASSET_TAGS = (); }; };
+		C58F12641C01C095001487AD /* MapStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C58F12631C01C095001487AD /* MapStoryboard.storyboard */; };
+		C58F12661C01C8A6001487AD /* FevStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C58F12651C01C8A6001487AD /* FevStoryboard.storyboard */; };
+		C58F126A1C022E52001487AD /* CoreLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58F12691C022E52001487AD /* CoreLocationService.swift */; };
+		C5A80A7A1BE4C426008AC817 /* UIViewExtensionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A80A791BE4C426008AC817 /* UIViewExtensionAnimation.swift */; };
+		C5A80A7C1BE637E8008AC817 /* ValidationUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A80A7B1BE637E8008AC817 /* ValidationUtility.swift */; };
 		C5DB4F321B5035DC00464E28 /* ProviderData.m in Sources */ = {isa = PBXBuildFile; fileRef = C5DB4F311B5035DC00464E28 /* ProviderData.m */; };
 		C5DB4F351B5107A900464E28 /* GeoPoints.m in Sources */ = {isa = PBXBuildFile; fileRef = C5DB4F341B5107A900464E28 /* GeoPoints.m */; };
 		C5DCEEBF1B4573800093EFB5 /* HireACook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C5DCEEBD1B4573800093EFB5 /* HireACook.xcdatamodeld */; };
@@ -57,9 +59,9 @@
 		C5E2C8171B4541EB001498D4 /* CoreDataErrorHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E2C8121B4541EB001498D4 /* CoreDataErrorHandling.m */; };
 		C5E2C8181B4541EB001498D4 /* NSManagedObject+CoreDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E2C8141B4541EB001498D4 /* NSManagedObject+CoreDataHandler.m */; };
 		C5E2C8191B4541EB001498D4 /* NSManagedObjectContext+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E2C8161B4541EB001498D4 /* NSManagedObjectContext+Helper.m */; };
-		C5E6DD471BCA4C910067A364 /* UIColor+colorWithHex.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E6DD421BCA4C910067A364 /* UIColor+colorWithHex.m */; settings = {ASSET_TAGS = (); }; };
-		C5E6DD481BCA4C910067A364 /* UIImage+ImageColor.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E6DD441BCA4C910067A364 /* UIImage+ImageColor.m */; settings = {ASSET_TAGS = (); }; };
-		C5E6DD491BCA4C910067A364 /* UIView+QuickNibs.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E6DD461BCA4C910067A364 /* UIView+QuickNibs.m */; settings = {ASSET_TAGS = (); }; };
+		C5E6DD471BCA4C910067A364 /* UIColor+colorWithHex.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E6DD421BCA4C910067A364 /* UIColor+colorWithHex.m */; };
+		C5E6DD481BCA4C910067A364 /* UIImage+ImageColor.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E6DD441BCA4C910067A364 /* UIImage+ImageColor.m */; };
+		C5E6DD491BCA4C910067A364 /* UIView+QuickNibs.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E6DD461BCA4C910067A364 /* UIView+QuickNibs.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,7 +105,6 @@
 		C51846EE1B0605BB00A36801 /* MyChoiceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyChoiceViewController.h; sourceTree = "<group>"; };
 		C51846EF1B0605BB00A36801 /* MyChoiceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyChoiceViewController.m; sourceTree = "<group>"; };
 		C51846F21B0605BB00A36801 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C51846F41B0605BB00A36801 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C51846F71B0605BB00A36801 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C51846FD1B0605BB00A36801 /* HireACookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HireACookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C51847021B0605BB00A36801 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -129,6 +130,9 @@
 		C549BF671B7B85F900B817CC /* DisplayRecordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayRecordView.h; sourceTree = "<group>"; };
 		C549BF681B7B85F900B817CC /* DisplayRecordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayRecordView.m; sourceTree = "<group>"; };
 		C549BF6A1B7B861C00B817CC /* DisplayRecordView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DisplayRecordView.xib; sourceTree = "<group>"; };
+		C58F12631C01C095001487AD /* MapStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MapStoryboard.storyboard; sourceTree = "<group>"; };
+		C58F12651C01C8A6001487AD /* FevStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FevStoryboard.storyboard; sourceTree = "<group>"; };
+		C58F12691C022E52001487AD /* CoreLocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreLocationService.swift; sourceTree = "<group>"; };
 		C5A80A791BE4C426008AC817 /* UIViewExtensionAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensionAnimation.swift; sourceTree = "<group>"; };
 		C5A80A7B1BE637E8008AC817 /* ValidationUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationUtility.swift; sourceTree = "<group>"; };
 		C5DB4F301B5035DC00464E28 /* ProviderData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProviderData.h; path = ../ProviderData.h; sourceTree = "<group>"; };
@@ -236,6 +240,7 @@
 		C50E5C991B39A04300C18E1F /* ShowRoom */ = {
 			isa = PBXGroup;
 			children = (
+				C58F12621C01C072001487AD /* StoryBoards */,
 				C50E5C931B3841EF00C18E1F /* ProgressHud */,
 				C50E5CA21B39A12800C18E1F /* Registration */,
 				C50E5CA11B39A11A00C18E1F /* Settings */,
@@ -252,6 +257,8 @@
 		C50E5C9A1B39A05400C18E1F /* BackOffice */ = {
 			isa = PBXGroup;
 			children = (
+				C58F126B1C027954001487AD /* GlobalDefinations */,
+				C58F12681C022E16001487AD /* LocationService */,
 				C5A80A781BE4C3F4008AC817 /* Extension */,
 				C5E6DD401BCA4C910067A364 /* Category */,
 				C540305C1BC595E000917D44 /* GeoCoder */,
@@ -370,13 +377,10 @@
 		C51846E31B0605BB00A36801 /* HireACook */ = {
 			isa = PBXGroup;
 			children = (
+				C58F12671C01CFAA001487AD /* Delegate */,
 				C50E5C9A1B39A05400C18E1F /* BackOffice */,
 				C50E5C991B39A04300C18E1F /* ShowRoom */,
-				C51846E81B0605BB00A36801 /* AppDelegate.h */,
-				C51846E91B0605BB00A36801 /* AppDelegate.m */,
 				C50E5C801B32DC7800C18E1F /* HireACook-Bridging-Header.h */,
-				C51846F11B0605BB00A36801 /* Main.storyboard */,
-				C51846F41B0605BB00A36801 /* Images.xcassets */,
 				C51846F61B0605BB00A36801 /* LaunchScreen.xib */,
 				C51846E41B0605BB00A36801 /* Supporting Files */,
 			);
@@ -417,6 +421,40 @@
 				C50E5C8F1B3820C600C18E1F /* GeoCoderService.m */,
 			);
 			name = GeoCoder;
+			sourceTree = "<group>";
+		};
+		C58F12621C01C072001487AD /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				C51846F11B0605BB00A36801 /* Main.storyboard */,
+				C58F12631C01C095001487AD /* MapStoryboard.storyboard */,
+				C58F12651C01C8A6001487AD /* FevStoryboard.storyboard */,
+			);
+			name = StoryBoards;
+			sourceTree = "<group>";
+		};
+		C58F12671C01CFAA001487AD /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				C51846E81B0605BB00A36801 /* AppDelegate.h */,
+				C51846E91B0605BB00A36801 /* AppDelegate.m */,
+			);
+			name = Delegate;
+			sourceTree = "<group>";
+		};
+		C58F12681C022E16001487AD /* LocationService */ = {
+			isa = PBXGroup;
+			children = (
+				C58F12691C022E52001487AD /* CoreLocationService.swift */,
+			);
+			name = LocationService;
+			sourceTree = "<group>";
+		};
+		C58F126B1C027954001487AD /* GlobalDefinations */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = GlobalDefinations;
 			sourceTree = "<group>";
 		};
 		C5A80A781BE4C3F4008AC817 /* Extension */ = {
@@ -489,6 +527,7 @@
 				C51846DE1B0605BB00A36801 /* Frameworks */,
 				C51846DF1B0605BB00A36801 /* Resources */,
 				2706803125A8F3A6E4598E8E /* Copy Pods Resources */,
+				5C4E641CF16A4ABAB654B54D /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -562,11 +601,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C58F12641C01C095001487AD /* MapStoryboard.storyboard in Resources */,
 				C51846F31B0605BB00A36801 /* Main.storyboard in Resources */,
 				C51846F81B0605BB00A36801 /* LaunchScreen.xib in Resources */,
-				C51846F51B0605BB00A36801 /* Images.xcassets in Resources */,
 				C549BF6B1B7B861C00B817CC /* DisplayRecordView.xib in Resources */,
 				C54780C61B0E11570006FE37 /* HireACook.xcassets in Resources */,
+				C58F12661C01C8A6001487AD /* FevStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,6 +635,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5C4E641CF16A4ABAB654B54D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C25A4D5108A404AF93EE8A0A /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -620,6 +675,7 @@
 				C50E5C841B32DE4E00C18E1F /* FavViewController.swift in Sources */,
 				C5DCEEC21B4595920093EFB5 /* CoreDataOperation.m in Sources */,
 				C51846F01B0605BB00A36801 /* MyChoiceViewController.m in Sources */,
+				C58F126A1C022E52001487AD /* CoreLocationService.swift in Sources */,
 				C5E2C8171B4541EB001498D4 /* CoreDataErrorHandling.m in Sources */,
 				C549BF691B7B85F900B817CC /* DisplayRecordView.m in Sources */,
 				C5E2C8181B4541EB001498D4 /* NSManagedObject+CoreDataHandler.m in Sources */,
@@ -778,6 +834,8 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Suman Chatterjee (8VT29F6R7U)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Suman Chatterjee (8VT29F6R7U)";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -785,10 +843,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/HireACook-PrefixHeader.pch";
 				INFOPLIST_FILE = HireACook/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dreamapps.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "eebde462-b9b2-4181-8eb4-5a8ef6225d16";
+				PROVISIONING_PROFILE = "7ce68065-6032-4d62-a62a-99ae6704d215";
 				SWIFT_OBJC_BRIDGING_HEADER = "HireACook/HireACook-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -803,6 +862,8 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Suman Chatterjee (8VT29F6R7U)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Suman Chatterjee (8VT29F6R7U)";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -810,10 +871,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/HireACook-PrefixHeader.pch";
 				INFOPLIST_FILE = HireACook/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dreamapps.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "eebde462-b9b2-4181-8eb4-5a8ef6225d16";
+				PROVISIONING_PROFILE = "7ce68065-6032-4d62-a62a-99ae6704d215";
 				SWIFT_OBJC_BRIDGING_HEADER = "HireACook/HireACook-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

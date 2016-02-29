@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lip-lt-bic">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map-->
+        <scene sceneID="ky6-Jr-9zz">
+            <objects>
+                <viewController storyboardIdentifier="MapViewStory" id="lip-lt-bic" customClass="MapViewController" customModule="HireACook" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UA5-qi-uiV"/>
+                        <viewControllerLayoutGuide type="bottom" id="uzb-x5-4U1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qyL-aa-w2P">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="k0L-F1-5r5">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="k0L-F1-5r5" firstAttribute="centerY" secondItem="qyL-aa-w2P" secondAttribute="centerY" id="Viz-G5-AoL"/>
+                            <constraint firstItem="k0L-F1-5r5" firstAttribute="centerX" secondItem="qyL-aa-w2P" secondAttribute="centerX" id="faf-GC-5Bj"/>
+                            <constraint firstItem="k0L-F1-5r5" firstAttribute="bottom" secondItem="uzb-x5-4U1" secondAttribute="top" id="mhJ-cR-PrT"/>
+                            <constraint firstItem="k0L-F1-5r5" firstAttribute="leading" secondItem="qyL-aa-w2P" secondAttribute="leadingMargin" constant="-20" id="nR7-0Z-L3x"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" tag="2" title="Map" id="RqX-OP-gbS"/>
+                    <connections>
+                        <outlet property="mapView" destination="k0L-F1-5r5" id="gZq-5T-cTS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PId-oQ-UdZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3621" y="-873"/>
+        </scene>
+    </scenes>
+</document>
