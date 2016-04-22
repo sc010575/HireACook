@@ -51,6 +51,8 @@
 		C58F126A1C022E52001487AD /* CoreLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58F12691C022E52001487AD /* CoreLocationService.swift */; };
 		C5A80A7A1BE4C426008AC817 /* UIViewExtensionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A80A791BE4C426008AC817 /* UIViewExtensionAnimation.swift */; };
 		C5A80A7C1BE637E8008AC817 /* ValidationUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A80A7B1BE637E8008AC817 /* ValidationUtility.swift */; };
+		C5AF960B1CCA22F9009F2E42 /* GeneralFadeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AF960A1CCA22F9009F2E42 /* GeneralFadeAnimator.swift */; };
+		C5AF96111CCA322F009F2E42 /* HomeTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AF96101CCA322F009F2E42 /* HomeTitleView.m */; };
 		C5DB4F321B5035DC00464E28 /* ProviderData.m in Sources */ = {isa = PBXBuildFile; fileRef = C5DB4F311B5035DC00464E28 /* ProviderData.m */; };
 		C5DB4F351B5107A900464E28 /* GeoPoints.m in Sources */ = {isa = PBXBuildFile; fileRef = C5DB4F341B5107A900464E28 /* GeoPoints.m */; };
 		C5DCEEBF1B4573800093EFB5 /* HireACook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C5DCEEBD1B4573800093EFB5 /* HireACook.xcdatamodeld */; };
@@ -135,6 +137,9 @@
 		C58F12691C022E52001487AD /* CoreLocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreLocationService.swift; sourceTree = "<group>"; };
 		C5A80A791BE4C426008AC817 /* UIViewExtensionAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensionAnimation.swift; sourceTree = "<group>"; };
 		C5A80A7B1BE637E8008AC817 /* ValidationUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationUtility.swift; sourceTree = "<group>"; };
+		C5AF960A1CCA22F9009F2E42 /* GeneralFadeAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralFadeAnimator.swift; sourceTree = "<group>"; };
+		C5AF960F1CCA322F009F2E42 /* HomeTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTitleView.h; sourceTree = "<group>"; };
+		C5AF96101CCA322F009F2E42 /* HomeTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTitleView.m; sourceTree = "<group>"; };
 		C5DB4F301B5035DC00464E28 /* ProviderData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProviderData.h; path = ../ProviderData.h; sourceTree = "<group>"; };
 		C5DB4F311B5035DC00464E28 /* ProviderData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProviderData.m; path = ../ProviderData.m; sourceTree = "<group>"; };
 		C5DB4F331B5107A900464E28 /* GeoPoints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeoPoints.h; path = ../GeoPoints.h; sourceTree = "<group>"; };
@@ -240,6 +245,7 @@
 		C50E5C991B39A04300C18E1F /* ShowRoom */ = {
 			isa = PBXGroup;
 			children = (
+				C5AF96091CCA22CB009F2E42 /* Animator */,
 				C58F12621C01C072001487AD /* StoryBoards */,
 				C50E5C931B3841EF00C18E1F /* ProgressHud */,
 				C50E5CA21B39A12800C18E1F /* Registration */,
@@ -280,6 +286,8 @@
 				C549BF671B7B85F900B817CC /* DisplayRecordView.h */,
 				C549BF681B7B85F900B817CC /* DisplayRecordView.m */,
 				C549BF6A1B7B861C00B817CC /* DisplayRecordView.xib */,
+				C5AF960F1CCA322F009F2E42 /* HomeTitleView.h */,
+				C5AF96101CCA322F009F2E42 /* HomeTitleView.m */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -463,6 +471,14 @@
 				C5A80A791BE4C426008AC817 /* UIViewExtensionAnimation.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		C5AF96091CCA22CB009F2E42 /* Animator */ = {
+			isa = PBXGroup;
+			children = (
+				C5AF960A1CCA22F9009F2E42 /* GeneralFadeAnimator.swift */,
+			);
+			name = Animator;
 			sourceTree = "<group>";
 		};
 		C5DCEEC31B4AC0DE0093EFB5 /* Model */ = {
@@ -686,7 +702,9 @@
 				C50E5C861B32DE6400C18E1F /* SettingsViewController.swift in Sources */,
 				C50E5C921B38284A00C18E1F /* LaunchingViewController.swift in Sources */,
 				C51846EA1B0605BB00A36801 /* AppDelegate.m in Sources */,
+				C5AF960B1CCA22F9009F2E42 /* GeneralFadeAnimator.swift in Sources */,
 				C50E5C881B32E26500C18E1F /* PostAddViewController.swift in Sources */,
+				C5AF96111CCA322F009F2E42 /* HomeTitleView.m in Sources */,
 				C50E5C901B3820C600C18E1F /* GeoCoderService.m in Sources */,
 				C51846ED1B0605BB00A36801 /* HomeViewController.m in Sources */,
 				C5A80A7A1BE4C426008AC817 /* UIViewExtensionAnimation.swift in Sources */,

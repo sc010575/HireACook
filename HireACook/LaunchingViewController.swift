@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LaunchingViewController: UIViewController {
+@objc class LaunchingViewController: UIViewController {
     
     @IBOutlet weak var postcodTextField: UITextField!
     
@@ -27,7 +27,9 @@ class LaunchingViewController: UIViewController {
     
     var progressHUD:ProgressHUD!
     var numberOfRecord:Int = 0
+    let transition = GeneralFadeAnimator()
     private var kvoContext: UInt8 = 1
+    
     
     
     @IBAction func performSearch(sender: AnyObject) {
@@ -85,8 +87,6 @@ class LaunchingViewController: UIViewController {
             }
         })
         
-        //Add observer when the operation queue finish
-        self.coredataQueue.addObserver(self, forKeyPath: "operationCount", options: NSKeyValueObservingOptions.New, context: &self.kvoContext)
         
     }
     
@@ -95,15 +95,18 @@ class LaunchingViewController: UIViewController {
         
         super.viewDidLoad()
         self.mainBannerView.hidden = true
+        //Add observer when the operation queue finish
+        self.coredataQueue.addObserver(self, forKeyPath: "operationCount", options: NSKeyValueObservingOptions.New, context: &self.kvoContext)
+        self.mainBannerView.slideInFromTop()
+
         
     }
     
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBar.hidden = true
         super.viewWillAppear(animated)
-        
+        self.bDataFatched = false
         self.mainBannerView.hidden = false
-        self.mainBannerView.slideInFromTop()
         self.postcodTextField.text = ""
         self.postcodTextField.becomeFirstResponder()
         
@@ -144,5 +147,39 @@ class LaunchingViewController: UIViewController {
             }
             
         }
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "showrecord"{
+            
+            let barViewControllers = segue.destinationViewController as! UITabBarController
+            barViewControllers.transitioningDelegate = self
+            
+//            if let homeViewController = barViewControllers.viewControllers![0] as? HomeViewController{
+//                
+//                homeViewController.transitioningDelegate = self
+//
+//            }
+
+            
+            
+        }
+    }
+
+}
+
+extension LaunchingViewController: UIViewControllerTransitioningDelegate {
+    
+    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        return transition
+    }
+    
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        return transition
+        
     }
 }

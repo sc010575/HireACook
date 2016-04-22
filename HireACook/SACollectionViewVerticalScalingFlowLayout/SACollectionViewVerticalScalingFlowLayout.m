@@ -41,6 +41,8 @@ static CGFloat const kHardValue = 0.2;
 
 #pragma  mark - SACollectionViewVerticalScalingFlowLayout Override Methods
 - (void)prepareLayout {
+    
+    
     /***
         This method is based on this sample.
         http://www.objc.io/issue-5/collection-views-and-uidynamics.html
@@ -183,7 +185,10 @@ static CGFloat const kHardValue = 0.2;
     self.minimumLineSpacing = kMinimumLineSpacing;
     CGFloat width = [UIScreen mainScreen].bounds.size.width;
     self.itemSize = CGSizeMake(width - kMinimumInteritemSpacing * 2.0f, width - kMinimumLineSpacing * 2.0f);
-    self.sectionInset = UIEdgeInsetsMake(kMinimumLineSpacing, kMinimumInteritemSpacing, kMinimumLineSpacing, kMinimumInteritemSpacing);
+    self.sectionInset = UIEdgeInsetsMake(0, kMinimumInteritemSpacing, kMinimumLineSpacing, kMinimumInteritemSpacing);
+    
+   // self.headerReferenceSize = CGSizeMake(self.collectionView.frame.size.width, 40);
+
 }
 
 @end// Copyright belongs to original author

@@ -12,15 +12,18 @@
 #import "ProviderData.h"
 #import "AppDelegate.h"
 #import "NSManagedObjectContext+Helper.h"
+#import "HomeTitleView.h"
+#import "HireACook-Swift.h"
 
 static void *ProgressContext = &ProgressContext;
 
-@interface HomeViewController ()
+@interface HomeViewController ()<UIViewControllerTransitioningDelegate>
 
 @property (nonatomic, strong) NSArray *items;
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) NSNumber *numberOfRecordToShow;
 @property (nonatomic, assign) BOOL weRetirveData;
+@property (nonatomic, strong) GeneralFadeAnimator *transition;
 
 @end
 
@@ -34,6 +37,7 @@ static NSString *const kCellIdentifier = @"Cell";
     //Use the main persistentStoreCoordinator
     AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     self.managedObjectContext = [NSManagedObjectContext managedObjectContextWithStoreCoordinator:appDelegate.persistentStoreCoordinator];
+    self.transition = [[GeneralFadeAnimator alloc] init];
     self.items = [NSArray array];
     self.weRetirveData = NO;
     [self performAsyncFetch];
@@ -127,6 +131,24 @@ static NSString *const kCellIdentifier = @"Cell";
     return [self.numberOfRecordToShow integerValue];
 }
 
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 1;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    
+    HomeTitleView *header = nil;
+    if ([kind isEqual:UICollectionElementKindSectionHeader]) {
+        header = [collectionView dequeueReusableSupplementaryViewOfKind:kind
+                                                    withReuseIdentifier:@"HomeTitleView"
+                                                           forIndexPath:indexPath];
+    }
+    return header;
+}
+
+
+
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     SACollectionViewVerticalScalingCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCellIdentifier forIndexPath:indexPath];
     
@@ -147,6 +169,31 @@ static NSString *const kCellIdentifier = @"Cell";
     return cell;
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Make sure your segue name in storyboard is the same as this line
+    if ([[segue identifier] isEqualToString:@"goBack"])
+    {
+        // Get reference to the destination view controller
+        NSLog(@"Done");
+        
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+
+        LaunchingViewController* lanchVc =[storyboard instantiateViewControllerWithIdentifier:@"LaunchingViewController"];
+        lanchVc.transitioningDelegate = self;
+
+    }
+}
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
+{
+    return self.transition;
+}
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
+{
+    return self.transition;
+}
 
 
 @end

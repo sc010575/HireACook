@@ -20,7 +20,7 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
          NSNotificationCenter.defaultCenter().addObserver(
-            self, selector: "weGotLocation:", name: WE_GOT_LOCATION, object: nil)
+            self, selector: #selector(MapViewController.weGotLocation(_:)), name: WE_GOT_LOCATION, object: nil)
         mapView.showsUserLocation=true
     }
     
