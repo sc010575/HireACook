@@ -24,6 +24,8 @@ static void *ProgressContext = &ProgressContext;
 @property (nonatomic, strong) NSNumber *numberOfRecordToShow;
 @property (nonatomic, assign) BOOL weRetirveData;
 @property (nonatomic, strong) GeneralFadeAnimator *transition;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *doneButton;
+- (IBAction)doDone:(id)sender;
 
 @end
 
@@ -169,6 +171,7 @@ static NSString *const kCellIdentifier = @"Cell";
     return cell;
 }
 
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     // Make sure your segue name in storyboard is the same as this line
@@ -196,4 +199,13 @@ static NSString *const kCellIdentifier = @"Cell";
 }
 
 
+- (IBAction)doDone:(id)sender {
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    LaunchingViewController* lanchVc =[storyboard instantiateViewControllerWithIdentifier:@"LaunchingViewController"];
+    lanchVc.transitioningDelegate = self;
+    [self presentViewController:lanchVc animated:YES completion:NULL];
+
+}
 @end

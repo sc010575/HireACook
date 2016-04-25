@@ -262,10 +262,13 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="Mec-Xs-qyT"/>
                         <barButtonItem key="rightBarButtonItem" title="Done" id="218-Pb-D8K">
                             <connections>
-                                <segue destination="hE7-bd-siS" kind="presentation" identifier="goBack" id="RFS-PD-zzl"/>
+                                <action selector="doDone:" destination="9ab-W8-btp" id="OXJ-5T-XlF"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="doneButton" destination="218-Pb-D8K" id="b6n-qo-Llh"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ydk-ZS-Rdh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

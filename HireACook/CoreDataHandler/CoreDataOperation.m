@@ -54,6 +54,11 @@
         return;
     }
     
+    //delete old record
+    [self.managedObjectContext deleteAllFromEntity:@"ProviderData"];
+    [self.managedObjectContext deleteAllFromEntity:@"GeoPoints"];
+    [self.managedObjectContext deleteAllFromEntity:@"Providermedia"];
+    
     
     [self.managedObjectContext updateOnBackgroundThread:^(NSManagedObjectContext *updateContext) {
         for (PFObject * individualRecord in self.dataRecords)

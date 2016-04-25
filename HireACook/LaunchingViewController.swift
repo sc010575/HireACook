@@ -156,8 +156,8 @@ import UIKit
             
             let barViewControllers = segue.destinationViewController as! UITabBarController
             barViewControllers.transitioningDelegate = self
-            
-//            if let homeViewController = barViewControllers.viewControllers![0] as? HomeViewController{
+//            let navBar = barViewControllers.viewControllers![0] as! UINavigationController
+//            if let homeViewController = navBar.topViewController as? HomeViewController{
 //                
 //                homeViewController.transitioningDelegate = self
 //

@@ -99,4 +99,17 @@
     return [[NSFileManager defaultManager] URLForDirectory:NSApplicationSupportDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:YES error:NULL];
 }
 
+- (void) deleteAllFromEntity:(NSString *)entityName {
+    NSFetchRequest * allRecords = [[NSFetchRequest alloc] init];
+    [allRecords setEntity:[NSEntityDescription entityForName:entityName inManagedObjectContext:self]];
+    [allRecords setIncludesPropertyValues:NO];
+    NSError * error = nil;
+    NSArray * result = [self executeFetchRequest:allRecords error:&error];
+    for (NSManagedObject * profile in result) {
+        [self deleteObject:profile];
+    }
+    NSError *saveError = nil;
+    [self save:&saveError];
+}
+
 @end

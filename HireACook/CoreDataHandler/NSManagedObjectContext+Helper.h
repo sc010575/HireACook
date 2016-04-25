@@ -26,4 +26,6 @@ typedef void (^NSManagedObjectContextCompletionBlock)();
 - (void)updateOnBackgroundThread:(NSManagedObjectContextUpdateBlock)updateBlock completion:(NSManagedObjectContextCompletionBlock)completionBlock;
 - (void)updateOnMainThread:(NSManagedObjectContextUpdateBlock)updateBlock completion:(NSManagedObjectContextCompletionBlock)completionBlock;
 
+- (void) deleteAllFromEntity:(NSString *)entityName;
+
 @end
