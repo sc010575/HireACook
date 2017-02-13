@@ -48,7 +48,7 @@
             startingLineNumber = "156"
             endingLineNumber = "156"
             landmarkName = "-collectionView:cellForItemAtIndexPath:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -176,7 +176,7 @@
             startingLineNumber = "98"
             endingLineNumber = "98"
             landmarkName = "viewDidLoad()"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -191,8 +191,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "107"
             endingLineNumber = "107"
-            landmarkName = "viewWillAppear(_:)"
-            landmarkType = "5">
+            landmarkName = "viewWillAppear(animated:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -207,8 +207,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "145"
             endingLineNumber = "145"
-            landmarkName = "observeValueForKeyPath(_:ofObject:change:context:)"
-            landmarkType = "5">
+            landmarkName = "observeValueForKeyPath(keyPath:ofObject:change:context:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -223,8 +223,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "177"
             endingLineNumber = "177"
-            landmarkName = "animationControllerForPresentedController(_:presentingController:sourceController:)"
-            landmarkType = "5">
+            landmarkName = "animationControllerForPresentedController(presented:presentingController:sourceController:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -240,7 +240,7 @@
             startingLineNumber = "145"
             endingLineNumber = "145"
             landmarkName = "-collectionView:viewForSupplementaryElementOfKind:atIndexPath:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -256,7 +256,7 @@
             startingLineNumber = "143"
             endingLineNumber = "143"
             landmarkName = "-collectionView:viewForSupplementaryElementOfKind:atIndexPath:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -272,7 +272,7 @@
             startingLineNumber = "198"
             endingLineNumber = "198"
             landmarkName = "-animationControllerForDismissedController:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -288,7 +288,7 @@
             startingLineNumber = "193"
             endingLineNumber = "193"
             landmarkName = "-animationControllerForPresentedController:presentingController:sourceController:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -303,8 +303,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "22"
             endingLineNumber = "22"
-            landmarkName = "animateTransition(_:)"
-            landmarkType = "5">
+            landmarkName = "animateTransition(transitionContext:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -320,7 +320,7 @@
             startingLineNumber = "185"
             endingLineNumber = "185"
             landmarkName = "-prepareForSegue:sender:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -335,40 +335,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "182"
             endingLineNumber = "182"
-            landmarkName = "animationControllerForDismissedController(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HireACook/CoreDataHandler/NSManagedObjectContext+Helper.m"
-            timestampString = "483266620.580945"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
-            landmarkName = "-deleteAllFromEntity:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HireACook/CoreDataHandler/NSManagedObjectContext+Helper.m"
-            timestampString = "483266662.445248"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
-            landmarkName = "-deleteAllFromEntity:"
-            landmarkType = "5">
+            landmarkName = "animationControllerForDismissedController(dismissed:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

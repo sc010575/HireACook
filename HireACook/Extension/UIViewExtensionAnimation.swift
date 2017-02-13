@@ -10,12 +10,12 @@ import UIKit
 
 extension UIView {
     
-    func slideInFromTop(duration: NSTimeInterval = 0.5, completionDelegate: AnyObject? = nil) {
+    func slideInFromTop(duration: NSTimeInterval = 0.5, completionDelegate: CAAnimationDelegate? = nil) {
         // Create a CATransition animation
         let slideInFromTopTransition = CATransition()
         
         // Set its callback delegate to the completionDelegate that was provided (if any)
-        if let delegate: AnyObject = completionDelegate {
+        if let delegate: CAAnimationDelegate = completionDelegate {
             slideInFromTopTransition.delegate = delegate
         }
         
@@ -30,12 +30,12 @@ extension UIView {
         self.layer.addAnimation(slideInFromTopTransition, forKey: "slideInFromTopTransition")
     }
     
-    func slideInFromBottom(duration: NSTimeInterval = 0.5, completionDelegate: AnyObject? = nil) {
+    func slideInFromBottom(duration: NSTimeInterval = 0.5, completionDelegate: CAAnimationDelegate? = nil) {
         // Create a CATransition animation
         let slideInFromBottomTransition = CATransition()
         
         // Set its callback delegate to the completionDelegate that was provided (if any)
-        if let delegate: AnyObject = completionDelegate {
+        if let delegate: CAAnimationDelegate = completionDelegate {
             slideInFromBottomTransition.delegate = delegate
         }
         

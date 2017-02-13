@@ -19,7 +19,7 @@ import UIKit
 
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
         
-        let containerView = transitionContext.containerView()!
+        let containerView = transitionContext.containerView()
         
         let toView = transitionContext.viewForKey(UITransitionContextToViewKey)!
         

@@ -586,6 +586,7 @@
 					C51846E01B0605BB00A36801 = {
 						CreatedOnToolsVersion = 6.3;
 						DevelopmentTeam = 8VT29F6R7U;
+						LastSwiftMigration = 0810;
 					};
 					C51846FC1B0605BB00A36801 = {
 						CreatedOnToolsVersion = 6.3;
@@ -868,6 +869,7 @@
 				PROVISIONING_PROFILE = "7ce68065-6032-4d62-a62a-99ae6704d215";
 				SWIFT_OBJC_BRIDGING_HEADER = "HireACook/HireACook-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -895,6 +897,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "7ce68065-6032-4d62-a62a-99ae6704d215";
 				SWIFT_OBJC_BRIDGING_HEADER = "HireACook/HireACook-Bridging-Header.h";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
